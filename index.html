@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Georgios Charonitakis — Senior Gameplay Developer</title>
+<meta name="description" content="Senior gameplay developer for Unity and Unreal Engine: combat and AI, progression and economy, controls, tools and UI. Available for contract work.">
+<link rel="canonical" href="https://gcharonitakis.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Georgios Charonitakis",
+  "jobTitle": "Senior Gameplay Developer - Unity & Unreal | Game Systems & AI",
+  "description": "Senior gameplay developer for Unity and Unreal Engine: combat and AI, progression and economy, controls, tools and UI. Available for contract work.",
+  "url": "https://gcharonitakis.github.io/",
+  "email": "mailto:charonitakis.giorgos@gmail.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/georgios-charonitakis-a08059303",
+    "https://github.com/GCharonitakis",
+    "https://www.upwork.com/freelancers/~01bbd0fe09ebf28932"
+  ],
+  "worksFor": { "@type": "Organization", "name": "Guacasoft Ltd" },
+  "knowsAbout": ["Unity", "Unreal Engine", "Gameplay programming"]
+}
+</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Georgios Charonitakis — Senior Gameplay Developer">
+<meta property="og:description" content="Senior Gameplay Developer - Unity & Unreal | Game Systems & AI. Combat and AI, progression and economy, controls, tools and UI across released and upcoming titles on PC and mobile.">
+<meta property="og:url" content="https://gcharonitakis.github.io/">
+<meta property="og:image" content="https://gcharonitakis.github.io/share-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Georgios Charonitakis — Senior Gameplay Developer · Unity & Unreal">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Georgios Charonitakis — Senior Gameplay Developer">
+<meta name="twitter:description" content="Senior Gameplay Developer - Unity & Unreal | Game Systems & AI. Combat and AI, progression and economy, controls, tools and UI across released and upcoming titles on PC and mobile.">
+<meta name="twitter:image" content="https://gcharonitakis.github.io/share-image.png">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<!-- fonts load without blocking first paint; the metric-matched fallbacks below keep the swap from shifting the layout -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* Fallbacks sized to IBM Plex's metrics (ascender 1025, descender 275 per 1000 em), so text keeps
+     the same line heights and breaks before and after the web font arrives (measured at 412 and 1280 px).
+     Arimo/Liberation Sans are Arial-metric clones found on Linux/Android. */
+  @font-face{ font-family:'Plex Sans Fallback'; src:local('Arial'), local('Arimo'), local('Liberation Sans');
+    size-adjust:100%; ascent-override:102.5%; descent-override:27.5%; line-gap-override:0%; }
+  @font-face{ font-family:'Plex Mono Fallback'; src:local('Courier New'), local('Cousine'), local('Liberation Mono');
+    size-adjust:100%; ascent-override:102.5%; descent-override:27.5%; line-gap-override:0%; }
+
+  :root{
+    --bg: #050C1F;
+    --bg-deep: #040A1A;
+    --panel: #0B1830;
+    --panel-soft: #0A1529;
+    --ink: #EAF2FB;
+    --ink-soft: #93AFD1;
+    --ink-faint: #7A93B5;
+    --accent: #2DD4BF;
+    --accent-hover: #5EEAD4;
+    --accent-soft: rgba(45,212,191,0.12);
+    --line: #1C3253;
+    --line-soft: #13243F;
+    --maxw: 920px;
+    --shadow: 0 10px 30px rgba(0,3,12,0.5);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    /* one soft teal glow, centred behind the hero; scrolls with the page */
+    background:
+      radial-gradient(ellipse 1200px 760px at 50% 320px, rgba(45,212,191,0.10), rgba(45,212,191,0) 70%) no-repeat,
+      var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', 'Plex Sans Fallback', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+  .mono{ font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(5,12,31,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{ max-width:var(--maxw); margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; }
+  .nav-brand{ display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600; letter-spacing:0.01em; color:var(--ink); }
+  .nav-brand:hover{ text-decoration:none; color:var(--ink); }
+  .nav-brand img{ display:block; height:28px; width:auto; }
+  .nav-links{ display:flex; gap:22px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12.5px; letter-spacing:0.05em; }
+  .nav-links a{ color:var(--ink-soft); }
+  .nav-links a:hover{ color:var(--accent); text-decoration:none; }
+  @media (max-width:760px){ .nav-long{ display:none; } .nav-links{ gap:16px; } }
+  /* phones: one row, logo only, then the five links spread across the rest */
+  @media (max-width:600px){
+    .nav-inner{ padding:10px 14px; gap:14px; }
+    .nav-name{ display:none; }
+    .nav-links{ flex:1; justify-content:space-between; gap:8px; font-size:11px; letter-spacing:0.02em; }
+  }
+  @media (max-width:360px){ .nav-inner{ gap:10px; padding:10px 12px; } .nav-links{ gap:6px; font-size:10.5px; letter-spacing:0; } }
+
+  /* ---------- corner frame (signature element) ---------- */
+  .frame{ position:relative; }
+  .corner{ position:absolute; width:16px; height:16px; opacity:0; transition:opacity .25s ease; }
+  .frame.in .corner{ opacity:1; }
+  .corner--tl{ top:-1px; left:-1px; border-top:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .corner--tr{ top:-1px; right:-1px; border-top:2px solid var(--accent); border-right:2px solid var(--accent); }
+  .corner--bl{ bottom:-1px; left:-1px; border-bottom:2px solid var(--accent); border-left:2px solid var(--accent); }
+  .corner--br{ bottom:-1px; right:-1px; border-bottom:2px solid var(--accent); border-right:2px solid var(--accent); }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:24px 0 0; }
+  @media (max-width:640px){ .hero{ padding-top:16px; } }
+  .hero-frame{
+    padding:44px 40px; border:1px solid var(--line); border-top:2px solid var(--accent); box-shadow:var(--shadow);
+    /* faint honeycomb, hero only */
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%232DD4BF' stroke-opacity='0.035' stroke-width='1'/%3E%3C/svg%3E"),
+      var(--panel);
+  }
+  .eyebrow{ font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12.5px; letter-spacing:0.12em; color:var(--accent); text-transform:uppercase; }
+  h1.name{ font-size:clamp(34px,6vw,54px); line-height:1.02; margin:14px 0 6px; font-weight:700; letter-spacing:-0.01em; color:var(--ink); }
+  .role{ font-size:clamp(16px,2.4vw,20px); color:var(--ink-soft); font-weight:500; margin:0 0 20px; }
+  .pitch{ max-width:56ch; font-size:15.5px; line-height:1.65; color:var(--ink); opacity:0.92; margin:0 0 26px; }
+  .contact-row{ display:flex; flex-wrap:wrap; gap:8px 18px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:13px; color:var(--ink-soft); }
+  .contact-row a{ color:var(--ink); }
+
+  /* ---------- Hero game strip (angled trailer tiles fading into the navy) ---------- */
+  .gamestrip{
+    display:flex; margin:32px -40px -44px; padding:0; overflow-x:auto; scroll-snap-type:x mandatory;
+    scrollbar-width:none; border-top:1px solid var(--line-soft);
+  }
+  .gamestrip::-webkit-scrollbar{ display:none; }
+  .tile{
+    position:relative; flex:1 0 0; min-width:0; aspect-ratio:16/9; margin-left:-14px; overflow:hidden; scroll-snap-align:start;
+    clip-path:polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%); background:var(--bg-deep); color:var(--ink);
+  }
+  .tile:first-child{ margin-left:0; }
+  /* one look for all four frames: slight brightness/saturation lift, a faint teal-to-navy tint,
+     and the navy fade at the bottom, kept dense behind the captions so they stay AA-readable */
+  .tile img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(1.12) saturate(1.08); transition:filter .2s ease, transform .3s ease; }
+  .tile::before{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(150deg, rgba(45,212,191,0.14) 0%, rgba(45,212,191,0.04) 45%, rgba(5,12,31,0.22) 100%); }
+  .tile::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(5,12,31,0.94) 0%, rgba(5,12,31,0.88) 34%, rgba(5,12,31,0.45) 62%, rgba(5,12,31,0) 88%); }
+  .tile:hover{ text-decoration:none; }
+  .tile:hover img{ filter:brightness(1.2) saturate(1.1); transform:scale(1.04); }
+  /* Expansion Beyond's trailer has cinematic bars baked in (~2.17:1 picture); zoom past them */
+  .tile--letterboxed img{ transform:scale(1.24); }
+  .tile--letterboxed:hover img{ transform:scale(1.28); }
+  .tile-cap{ position:absolute; z-index:2; left:24px; right:18px; bottom:12px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; line-height:1.35; }
+  .tile-cap b{ display:block; font-size:11.5px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink); }
+  .tile-cap span{ font-size:11px; color:var(--ink-soft); }
+  .tile:focus-visible{ outline:none; }
+  .tile:focus-visible::after{ box-shadow:inset 0 0 0 2px var(--accent); }
+  .tile-cap span{ white-space:nowrap; }
+  /* phones: tighter hero padding; all four tiles in a 2x2 grid of 16:9 tiles (no angle, hairline gaps) */
+  @media (max-width:640px){
+    .hero-frame{ padding:32px 22px; }
+    .gamestrip{ display:grid; grid-template-columns:1fr 1fr; gap:1px; margin:20px -22px -32px; overflow:visible; background:var(--line-soft); }
+    .tile{ margin-left:0; clip-path:none; }
+    /* captions cover up to half a phone tile (two-line titles), so the dense part of the fade reaches higher */
+    .tile::after{ background:linear-gradient(to top, rgba(5,12,31,0.94) 0%, rgba(5,12,31,0.9) 52%, rgba(5,12,31,0.5) 76%, rgba(5,12,31,0) 96%); }
+    .tile-cap{ left:10px; right:8px; bottom:7px; line-height:1.3; }
+    .tile-cap b{ font-size:10px; letter-spacing:0.02em; }
+    .tile-cap span{ font-size:10px; }
+  }
+
+  .titleblock{
+    margin-top:0; display:grid; grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line); border-top:none; background:var(--panel-soft);
+    font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace;
+  }
+  .tb-cell{ padding:12px 16px; border-left:1px solid var(--line-soft); }
+  .tb-cell:first-child{ border-left:none; }
+  .tb-label{ font-size:10.5px; letter-spacing:0.08em; color:var(--ink-faint); text-transform:uppercase; margin-bottom:4px; }
+  .tb-value{ font-size:13px; color:var(--ink); font-weight:500; }
+  .tb-value{ white-space:nowrap; }
+  /* below 820px: compact 2x2. The left column is wider because it holds the two long values
+     (Gameplay Developer, Unity · Unreal 4/5); Teams may wrap onto a second line on small phones. */
+  @media (max-width:820px){
+    .titleblock{ grid-template-columns:1.3fr 1fr; }
+    .tb-cell{ padding:10px 14px; }
+    .tb-cell:nth-child(3){ border-left:none; }
+    .tb-cell:nth-child(n+3){ border-top:1px solid var(--line-soft); }
+    .tb-value{ white-space:normal; }
+    .tb-cell:nth-child(odd) .tb-value{ white-space:nowrap; }
+  }
+  @media (max-width:360px){ .tb-cell{ padding:9px 10px; } .tb-value{ font-size:11.5px; } .tb-label{ font-size:10px; } }
+
+  /* ---------- Availability / CTA ---------- */
+  .availability{
+    margin-top:18px; padding:16px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 20px;
+    border:1px solid var(--line); border-left:2px solid var(--accent); background:var(--panel-soft);
+  }
+  .avail-text{ margin:0; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:13px; line-height:1.6; color:var(--ink); }
+  .avail-text .sep{ color:var(--ink-faint); }
+  .avail-actions{ display:flex; flex-wrap:wrap; gap:10px; }
+  .btn{
+    display:inline-block; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12.5px; letter-spacing:0.04em;
+    padding:9px 16px; border:1px solid var(--accent); color:var(--accent); background:transparent;
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn:hover{ text-decoration:none; background:var(--accent-soft); }
+  .btn--primary{ background:var(--accent); color:var(--bg-deep); font-weight:600; }
+  .btn--primary:hover{ background:var(--accent-hover); border-color:var(--accent-hover); }
+
+  /* ---------- Section divider ---------- */
+  .divider{ display:flex; align-items:center; gap:10px; margin:80px 0 34px; }
+  .divider .tick{ width:1px; height:10px; background:var(--ink-faint); }
+  .divider .rule{ flex:1; height:1px; background:var(--line); }
+  .divider .label{ margin:0; font-weight:400; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; letter-spacing:0.12em; color:var(--ink-soft); text-transform:uppercase; white-space:nowrap; }
+  section > .divider:first-child{ margin-top:0; }
+  section + section{ margin-top:80px; }
+  #projects{ margin-top:32px; }
+  .sheet:last-child{ margin-bottom:0; }
+  section[id], footer[id], .sheet[id]{ scroll-margin-top:64px; }
+  #projects .divider{ margin-bottom:20px; }
+
+  /* ---------- Video frame: thumbnail facade, real player (youtube-nocookie) only after a click ---------- */
+  .video-frame{ position:relative; aspect-ratio:16/9; width:100%; overflow:hidden; background:var(--bg-deep); }
+  .video-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .yt-facade{ position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; background:var(--bg-deep); cursor:pointer; }
+  .yt-facade img{ width:100%; height:100%; object-fit:cover; display:block; opacity:0.88; transition:opacity .2s ease; }
+  .yt-facade:hover img{ opacity:1; }
+  .yt-play{
+    position:absolute; left:50%; top:50%; width:72px; height:50px; transform:translate(-50%,-50%);
+    background:rgba(5,12,31,0.82); border:1px solid var(--accent); border-radius:10px; transition:background .2s ease;
+  }
+  .yt-play::before{ content:""; position:absolute; left:29px; top:15px; border-style:solid; border-width:10px 0 10px 17px; border-color:transparent transparent transparent var(--accent); }
+  .yt-facade:hover .yt-play, .yt-facade:focus-visible .yt-play{ background:var(--accent); }
+  .yt-facade:hover .yt-play::before, .yt-facade:focus-visible .yt-play::before{ border-left-color:var(--bg-deep); }
+  .yt-facade:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; }
+
+  /* ---------- Project sheets ---------- */
+  .sheet{ background:var(--panel); border:1px solid var(--line); margin-bottom:28px; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease; }
+  .sheet:hover{ transform:translateY(-3px); box-shadow:0 16px 40px rgba(3,10,25,0.55); }
+  .sheet-head{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 20px; padding:20px 24px 14px; border-bottom:1px solid var(--line-soft); }
+  .sheet-title{ margin:0; font-size:19px; font-weight:700; color:var(--ink); }
+  .sheet-meta{ font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; color:var(--ink-faint); letter-spacing:0.02em; }
+  .sheet-specs{ display:flex; flex-wrap:wrap; gap:0; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:11.5px; border-bottom:1px solid var(--line-soft); }
+  .spec{ padding:10px 18px; border-right:1px solid var(--line-soft); color:var(--ink-soft); }
+  .spec b{ color:var(--ink); font-weight:600; }
+  .spec:last-child{ border-right:none; }
+  .sheet-body{ padding:22px 24px 26px; }
+  .sheet-desc{ font-size:14.5px; line-height:1.6; color:var(--ink); opacity:0.92; margin:0 0 16px; }
+  .sheet-notes{ list-style:none; margin:18px 0 20px; padding:0; display:grid; gap:9px; }
+  .sheet-notes li{ font-size:14px; line-height:1.55; padding-left:18px; position:relative; color:var(--ink); opacity:0.92; }
+  .sheet-notes li::before{ content:"—"; position:absolute; left:0; color:var(--accent); }
+  .sheet-link{ font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12.5px; }
+
+  /* ---------- Client feedback ---------- */
+  .section-note{ margin:-18px 0 24px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; color:var(--ink-faint); }
+  /* masonry via CSS columns: cards keep their natural height, flowing down each column in source order */
+  .quotes{ columns:1; column-gap:20px; }
+  @media (min-width:700px){ .quotes{ columns:2; } }
+  /* 3 columns: two cards per column ([1,2] [3,4] [5,6]); left to the browser, it stacked 1-3 in the first
+     column and left the third nearly empty. Revisit these breaks if the number of quotes changes. */
+  @media (min-width:1100px){ .quotes{ columns:3; } .quote:nth-child(2), .quote:nth-child(4){ break-after:column; } }
+  .quote{
+    display:block; margin:0 0 20px; padding:20px 22px; break-inside:avoid;
+    background:var(--panel); border:1px solid var(--line); border-top:2px solid var(--accent); box-shadow:var(--shadow);
+  }
+  .quote p{ margin:0 0 14px; font-size:14px; line-height:1.65; color:var(--ink); font-style:italic; }
+  .quote cite{ display:block; font-style:normal; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:11.5px; color:var(--ink-faint); }
+
+  .badge{
+    display:inline-block; vertical-align:middle; margin-left:8px;
+    font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:10px; letter-spacing:0.1em;
+    text-transform:uppercase; padding:3px 8px; color:var(--accent);
+    border:1px solid var(--accent); background:var(--accent-soft);
+  }
+
+  /* ---------- Skills spec table ---------- */
+  .spectable{ border:1px solid var(--line); background:var(--panel); box-shadow:var(--shadow); }
+  .spec-row{ display:grid; grid-template-columns:200px 1fr; border-top:1px solid var(--line-soft); }
+  .spec-row:first-child{ border-top:none; }
+  .spec-key{ font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; letter-spacing:0.06em; color:var(--accent); padding:16px 18px; text-transform:uppercase; border-right:1px solid var(--line-soft); }
+  .spec-val{ padding:16px 20px; font-size:14.5px; color:var(--ink); display:flex; flex-wrap:wrap; gap:8px 10px; }
+  .chip{ font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12.5px; padding:4px 10px; background:var(--panel-soft); border:1px solid var(--line); color:var(--ink); }
+  @media (max-width:640px){ .spec-row{ grid-template-columns:1fr; } .spec-key{ border-right:none; border-bottom:1px solid var(--line-soft); } }
+
+  /* ---------- Work with me (2x2 grid, hairlines from the grid gap) ---------- */
+  .workgrid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line); box-shadow:var(--shadow); }
+  .work-cell{ background:var(--panel); padding:20px 22px 22px; }
+  .work-key{ margin:0 0 10px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; font-weight:400; letter-spacing:0.06em; color:var(--accent); text-transform:uppercase; }
+  .work-cell p{ margin:0; font-size:14.5px; line-height:1.6; color:var(--ink); }
+  @media (max-width:640px){ .workgrid{ grid-template-columns:1fr; } }
+  .work-cta{ margin-top:22px; }
+
+  /* ---------- Footer ---------- */
+  footer{ margin-top:100px; border-top:1px solid var(--line-soft); padding:34px 0 60px; }
+  .foot-row{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12.5px; color:var(--ink-soft); }
+  .foot-row a{ color:var(--ink); }
+  .foot-links{ justify-content:flex-start; gap:10px 24px; margin-top:14px; }
+  .foot-brand{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin-top:22px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; color:var(--ink-faint); }
+  .foot-brand img{ display:block; height:28px; width:auto; }
+  .foot-brand-text{ display:flex; flex-wrap:wrap; gap:4px 10px; }
+  /* narrow screens: the two parts stack, no dangling separator */
+  @media (max-width:640px){ .foot-brand-text{ flex-direction:column; } .foot-brand-text .sep{ display:none; } }
+
+  /* scroll-reveal for sections below the hero only; hidden state only when JS is running */
+  .js .reveal{ opacity:0; transform:translateY(10px); transition:opacity .25s ease-out, transform .25s ease-out; }
+  .js .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .js .reveal{ opacity:1; transform:none; transition:none; }
+    .corner{ opacity:1; transition:none; }
+    .tile img, .yt-facade img, .yt-play{ transition:none; }
+    .tile:hover img{ transform:none; }
+    .tile--letterboxed img, .tile--letterboxed:hover img{ transform:scale(1.24); }
+    .sheet{ transition:none; }
+    .sheet:hover{ transform:none; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="Georgios Charonitakis, back to top"><img src="guacasoft-logo.png" alt="" width="25" height="28"><span class="nav-name">Georgios Charonitakis</span></a>
+    <nav class="nav-links">
+      <a href="#projects">PROJECTS</a>
+      <a href="#feedback">FEEDBACK</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#work">WORK<span class="nav-long"> WITH ME</span></a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-frame">
+      <div class="eyebrow">// Senior Gameplay Developer</div>
+      <h1 class="name">Georgios<br>Charonitakis</h1>
+      <p class="role">Unity &amp; Unreal Engine — Game Systems &amp; AI</p>
+      <p class="pitch">10+ years building the systems players actually touch — combat and AI, progression and economy, controls and vehicles, gameplay tools and UI — across released and upcoming titles on PC and mobile. Founder of Guacasoft Ltd, delivering contract gameplay programming to external studios.</p>
+      <div class="contact-row">
+        <span><a href="mailto:charonitakis.giorgos@gmail.com">charonitakis.giorgos@gmail.com</a></span>
+        <span><a href="https://www.linkedin.com/in/georgios-charonitakis-a08059303" target="_blank" rel="noopener">linkedin.com/in/georgios-charonitakis-a08059303</a></span>
+        <span><a href="https://github.com/GCharonitakis" target="_blank" rel="noopener">github.com/GCharonitakis</a></span>
+        <span><a href="https://www.upwork.com/freelancers/~01bbd0fe09ebf28932" target="_blank" rel="noopener">Upwork</a></span>
+        <span>Remote</span>
+        <span><a href="Georgios_Charonitakis_Resume.pdf" target="_blank" rel="noopener">Download résumé (PDF) ↗</a></span>
+      </div>
+      <nav class="gamestrip" aria-label="Trailers">
+        <a class="tile tile--letterboxed" href="#expansion-beyond">
+          <img src="https://i.ytimg.com/vi/U0Aj2vPXBTs/hq2.jpg" srcset="https://i.ytimg.com/vi/U0Aj2vPXBTs/hq2.jpg 480w, https://i.ytimg.com/vi/U0Aj2vPXBTs/sd2.jpg 640w, https://i.ytimg.com/vi/U0Aj2vPXBTs/maxres2.jpg 1280w" sizes="(max-width:640px) calc(50vw - 25px), 230px" alt="Expansion Beyond gameplay: a spider-like creature stalking an astronaut" width="480" height="270" loading="eager" decoding="async">
+          <span class="tile-cap"><b>Expansion Beyond</b><span>Unity · iOS</span></span>
+        </a>
+        <a class="tile" href="#mercs-inc">
+          <img src="https://i.ytimg.com/vi/d28b-Rh8AxA/hq3.jpg" srcset="https://i.ytimg.com/vi/d28b-Rh8AxA/hq3.jpg 480w, https://i.ytimg.com/vi/d28b-Rh8AxA/sd3.jpg 640w, https://i.ytimg.com/vi/d28b-Rh8AxA/maxres3.jpg 1280w" sizes="(max-width:640px) calc(50vw - 25px), 230px" alt="MERCS INC gameplay: two mercenaries with rifles at a desert outpost" width="480" height="270" loading="eager" decoding="async">
+          <span class="tile-cap"><b>MERCS INC</b><span>Unreal · PC</span></span>
+        </a>
+        <a class="tile" href="#destinys-divide">
+          <img src="https://i.ytimg.com/vi/pgTeatIXem8/hq2.jpg" srcset="https://i.ytimg.com/vi/pgTeatIXem8/hq2.jpg 480w, https://i.ytimg.com/vi/pgTeatIXem8/sd2.jpg 640w, https://i.ytimg.com/vi/pgTeatIXem8/maxres2.jpg 1280w" sizes="(max-width:640px) calc(50vw - 25px), 230px" alt="Destiny's Divide gameplay: the card battle board" width="480" height="270" loading="eager" decoding="async">
+          <span class="tile-cap"><b>Destiny's Divide</b><span>Unreal · PC</span></span>
+        </a>
+        <a class="tile" href="#savage">
+          <img src="https://i.ytimg.com/vi/iJvuHZIDgfI/hq3.jpg" srcset="https://i.ytimg.com/vi/iJvuHZIDgfI/hq3.jpg 480w, https://i.ytimg.com/vi/iJvuHZIDgfI/sd3.jpg 640w, https://i.ytimg.com/vi/iJvuHZIDgfI/maxres3.jpg 1280w" sizes="(max-width:640px) calc(50vw - 25px), 230px" alt="Savage: Road to Darkness gameplay: creatures by a misty lake" width="480" height="270" loading="eager" decoding="async">
+          <span class="tile-cap"><b>Savage: Road to Darkness</b><span>Unity · Unreleased</span></span>
+        </a>
+      </nav>
+    </div>
+    <div class="titleblock">
+      <div class="tb-cell"><div class="tb-label">Role</div><div class="tb-value">Gameplay Developer</div></div>
+      <div class="tb-cell"><div class="tb-label">Experience</div><div class="tb-value">10+ years</div></div>
+      <div class="tb-cell"><div class="tb-label">Engines</div><div class="tb-value">Unity · Unreal 4/5</div></div>
+      <div class="tb-cell"><div class="tb-label">Teams</div><div class="tb-value">5–10 person studios</div></div>
+    </div>
+    <div class="availability">
+      <p class="avail-text">Available for new contract work <span class="sep">·</span> 20+ hours a week <span class="sep">·</span> European time zone</p>
+      <div class="avail-actions">
+        <a class="btn btn--primary" href="mailto:charonitakis.giorgos@gmail.com">Email me</a>
+        <a class="btn" href="https://www.upwork.com/freelancers/~01bbd0fe09ebf28932" target="_blank" rel="noopener">Upwork profile</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="divider reveal"><span class="tick"></span><span class="rule"></span><h2 class="label">Sec. 01 — Projects</h2><span class="rule"></span><span class="tick"></span></div>
+    <!-- Expansion Beyond -->
+    <div class="sheet reveal" id="expansion-beyond">
+      <div class="sheet-head">
+        <h3 class="sheet-title">Expansion Beyond</h3>
+        <div class="sheet-meta">Jun 2019 – Present</div>
+      </div>
+      <div class="sheet-specs">
+        <div class="spec">STUDIO <b>Expansion Games LLC</b></div>
+        <div class="spec">ENGINE <b>Unity (C#)</b></div>
+        <div class="spec">PLATFORM <b>iOS</b></div>
+        <div class="spec">TEAM <b>5–10</b></div>
+      </div>
+      <div class="sheet-body">
+        <p class="sheet-desc">Live sci-fi survival game on iOS with ongoing content updates; the only Unity developer in a 5–10 person team.</p>
+        <div class="frame">
+          <span class="corner corner--tl"></span><span class="corner corner--tr"></span>
+          <span class="corner corner--bl"></span><span class="corner corner--br"></span>
+          <div class="video-frame">
+            <button type="button" class="yt-facade" data-id="U0Aj2vPXBTs" data-title="Expansion Beyond trailer" aria-label="Play Expansion Beyond trailer"><img src="https://i.ytimg.com/vi/U0Aj2vPXBTs/hqdefault.jpg" srcset="https://i.ytimg.com/vi/U0Aj2vPXBTs/mqdefault.jpg 320w, https://i.ytimg.com/vi/U0Aj2vPXBTs/hqdefault.jpg 480w, https://i.ytimg.com/vi/U0Aj2vPXBTs/sddefault.jpg 640w, https://i.ytimg.com/vi/U0Aj2vPXBTs/maxresdefault.jpg 1280w" sizes="(max-width:640px) calc(100vw - 98px), 820px" alt="" width="1280" height="720" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <ul class="sheet-notes">
+          <li>Crafting and base-building progression systems, including resource extraction and a cloning/respawn mechanic</li>
+          <li>Combat/AI logic for hostile creature encounters</li>
+          <li>Gameplay tools and UI supporting regular live-content updates</li>
+          <li>Implemented player controls, plus UI, sound and animation setup</li>
+        </ul>
+        <a class="sheet-link" href="https://apps.apple.com/us/app/expansion-beyond/id6759971613" target="_blank" rel="noopener">→ view on App Store</a>
+      </div>
+    </div>
+
+    <!-- MERCS INC -->
+    <div class="sheet reveal" id="mercs-inc">
+      <div class="sheet-head">
+        <h3 class="sheet-title">MERCS INC</h3>
+        <div class="sheet-meta">May 2023 – May 2026</div>
+      </div>
+      <div class="sheet-specs">
+        <div class="spec">STUDIO <b>Chicken Feet Digital</b></div>
+        <div class="spec">ENGINE <b>Unreal (Blueprints)</b></div>
+        <div class="spec">PLATFORM <b>PC · Steam, upcoming</b></div>
+        <div class="spec">TEAM <b>5 (credited)</b></div>
+      </div>
+      <div class="sheet-body">
+        <p class="sheet-desc">Tactical squad-based RTS blending tower defense and RPG elements. Credited developer on the official Steam page.</p>
+        <div class="frame">
+          <span class="corner corner--tl"></span><span class="corner corner--tr"></span>
+          <span class="corner corner--bl"></span><span class="corner corner--br"></span>
+          <div class="video-frame">
+            <button type="button" class="yt-facade" data-id="d28b-Rh8AxA" data-title="MERCS INC trailer" aria-label="Play MERCS INC trailer"><img src="https://i.ytimg.com/vi/d28b-Rh8AxA/hqdefault.jpg" srcset="https://i.ytimg.com/vi/d28b-Rh8AxA/mqdefault.jpg 320w, https://i.ytimg.com/vi/d28b-Rh8AxA/hqdefault.jpg 480w, https://i.ytimg.com/vi/d28b-Rh8AxA/sddefault.jpg 640w, https://i.ytimg.com/vi/d28b-Rh8AxA/maxresdefault.jpg 1280w" sizes="(max-width:640px) calc(100vw - 98px), 820px" alt="" width="1280" height="720" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <ul class="sheet-notes">
+          <li>Programmed squad combat and AI: vision, targeting, shooting and cover mechanics</li>
+          <li>Progression systems and internal gameplay tools supporting procedural generation and character customization</li>
+          <li>Profiled and optimized core gameplay code for a 3D top-down tactical action title</li>
+          <li>Built the in-game economy; helped with level design and VFX/SFX integration</li>
+        </ul>
+        <a class="sheet-link" href="https://store.steampowered.com/app/2814640/MERCS_INC/" target="_blank" rel="noopener">→ view on Steam</a>
+      </div>
+    </div>
+
+    <!-- Destiny's Divide -->
+    <div class="sheet reveal" id="destinys-divide">
+      <div class="sheet-head">
+        <h3 class="sheet-title">Destiny's Divide</h3>
+        <div class="sheet-meta">Jul 2021 – Jun 2024</div>
+      </div>
+      <div class="sheet-specs">
+        <div class="spec">STUDIO <b>Fobia</b></div>
+        <div class="spec">ENGINE <b>Unreal (Blueprints)</b></div>
+        <div class="spec">PLATFORM <b>PC · Steam Early Access</b></div>
+        <div class="spec">TEAM <b>5–10</b></div>
+      </div>
+      <div class="sheet-body">
+        <p class="sheet-desc">Free-to-play PvP fantasy card game with 11 playable heroes; 140+ user reviews on Steam.</p>
+        <div class="frame">
+          <span class="corner corner--tl"></span><span class="corner corner--tr"></span>
+          <span class="corner corner--bl"></span><span class="corner corner--br"></span>
+          <div class="video-frame">
+            <button type="button" class="yt-facade" data-id="pgTeatIXem8" data-title="Destiny's Divide trailer" aria-label="Play Destiny's Divide trailer"><img src="https://i.ytimg.com/vi/pgTeatIXem8/hqdefault.jpg" srcset="https://i.ytimg.com/vi/pgTeatIXem8/mqdefault.jpg 320w, https://i.ytimg.com/vi/pgTeatIXem8/hqdefault.jpg 480w, https://i.ytimg.com/vi/pgTeatIXem8/sddefault.jpg 640w, https://i.ytimg.com/vi/pgTeatIXem8/maxresdefault.jpg 1280w" sizes="(max-width:640px) calc(100vw - 98px), 820px" alt="" width="1280" height="720" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <ul class="sheet-notes">
+          <li>Combat/ability logic and progression systems, including the ranked ladder, seasonal rewards, and crafting economy</li>
+          <li>UI framework for deckbuilding, match flow, and progression screens</li>
+          <li>Internal gameplay tools to support rapid balance iteration across 11 heroes</li>
+        </ul>
+        <a class="sheet-link" href="https://store.steampowered.com/app/1553390/Destinys_Divide/" target="_blank" rel="noopener">→ view on Steam</a>
+      </div>
+    </div>
+
+    <!-- DispoZone: Waste Wars -->
+    <div class="sheet reveal" id="dispozone">
+      <div class="sheet-head">
+        <h3 class="sheet-title">DispoZone: Waste Wars</h3>
+        <div class="sheet-meta">Sep 2024 – Aug 2025</div>
+      </div>
+      <div class="sheet-specs">
+        <div class="spec">STUDIO <b>TroppoSoft</b></div>
+        <div class="spec">ENGINE <b>Unreal (Blueprints)</b></div>
+        <div class="spec">PLATFORM <b>PC prototype</b></div>
+      </div>
+      <div class="sheet-body">
+        <ul class="sheet-notes">
+          <li>Implemented all gameplay mechanics: player movement, weapon behavior, unit AI and commands</li>
+          <li>Built the in-game economy, with level-design and VFX/SFX integration support</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Savage: Road to Darkness -->
+    <div class="sheet reveal" id="savage">
+      <div class="sheet-head">
+        <h3 class="sheet-title">Savage: Road to Darkness <span class="badge">Unreleased</span></h3>
+        <div class="sheet-meta">2016 – 2018</div>
+      </div>
+      <div class="sheet-specs">
+        <div class="spec">ENGINE <b>Unity (C#)</b></div>
+        <div class="spec">STATUS <b>Halted pre-launch</b></div>
+      </div>
+      <div class="sheet-body">
+        <p class="sheet-desc">Early credit — contributed combat/AI logic and core gameplay systems programming. Development halted pre-launch due to budget constraints.</p>
+        <div class="frame">
+          <span class="corner corner--tl"></span><span class="corner corner--tr"></span>
+          <span class="corner corner--bl"></span><span class="corner corner--br"></span>
+          <div class="video-frame">
+            <button type="button" class="yt-facade" data-id="iJvuHZIDgfI" data-title="Savage: Road to Darkness trailer" aria-label="Play Savage: Road to Darkness trailer"><img src="https://i.ytimg.com/vi/iJvuHZIDgfI/hqdefault.jpg" srcset="https://i.ytimg.com/vi/iJvuHZIDgfI/mqdefault.jpg 320w, https://i.ytimg.com/vi/iJvuHZIDgfI/hqdefault.jpg 480w, https://i.ytimg.com/vi/iJvuHZIDgfI/sddefault.jpg 640w" sizes="(max-width:640px) calc(100vw - 98px), 820px" alt="" width="1280" height="720" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT FEEDBACK -->
+  <section id="feedback">
+    <div class="divider reveal"><span class="tick"></span><span class="rule"></span><h2 class="label">Sec. 02 — Client feedback</h2><span class="rule"></span><span class="tick"></span></div>
+    <p class="section-note reveal">From public Upwork reviews · <a href="https://www.upwork.com/freelancers/~01bbd0fe09ebf28932" target="_blank" rel="noopener">view all ↗</a></p>
+    <div class="quotes">
+      <blockquote class="quote reveal">
+        <p>"Giorgos combines expertise in Unity with clear communication and a great attitude. … No matter the problem, Giorgos always found a solution. His communication is very clear, throughout the project we didn't have a single situation of miscommunication. … Giorgos is a rare individual, I recommend him without reservations …"</p>
+        <cite>— Client, Expansion Beyond</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>"Extremely happy with Georgios, would highly recommend to anyone. We've been working together for a few years without any problems. He always completed his work in time and with great quality."</p>
+        <cite>— Client, Destiny's Divide</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>"…He's very experienced in Unity and mobile game development, communicates clearly and always finds a solution for every problem."</p>
+        <cite>— Client, Unity 2D mobile game project</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>"Giorgos goes above and beyond in working with you to achieve your vision. You can tell he is enthusiastic and motivated to make your project come to life, not just to the letter of what you requested, but thinking beyond what you are asking for and making suggestions to assist in the future viability of your project. I will always recommend Giorgos for anyone looking for an Unreal Engine programmer!"</p>
+        <cite>— Client, XCOM-style game project</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>"Georgios helped me solve a few issues with a complex mobile game developed in Unity. Giorgos stands out for his ability to communicate (impeccable, clear English), results orientation (all issues were solved within a couple of days) and experience with Unity (he immediately understood how our project was structured and what components needed changing). I had a great experience and will certainly hire Georgios again."</p>
+        <cite>— Client, Unity mobile game bug fixing</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>"Would rate 10 stars if I could :) George started on the project immediately, had amazing communication throughout and finished the project in a short amount of time. He kept me updated, helped with troubleshooting (which was beyond the scope of the project) and sent video examples to help me navigate the software. Looking forward to working with him again!"</p>
+        <cite>— Client, Unreal Engine project</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="divider reveal"><span class="tick"></span><span class="rule"></span><h2 class="label">Sec. 03 — Skills</h2><span class="rule"></span><span class="tick"></span></div>
+    <div class="spectable reveal">
+      <div class="spec-row">
+        <div class="spec-key">Engines</div>
+        <div class="spec-val"><span class="chip">Unity</span><span class="chip">Unreal Engine 4 &amp; 5</span></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Languages &amp; Scripting</div>
+        <div class="spec-val"><span class="chip">C#</span><span class="chip">Blueprints (Unreal)</span></div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Gameplay Systems</div>
+        <div class="spec-val">
+          <span class="chip">Combat &amp; AI logic</span><span class="chip">Progression &amp; economy</span>
+          <span class="chip">UI frameworks</span><span class="chip">Gameplay tools</span><span class="chip">Optimization &amp; profiling</span>
+          <span class="chip">Player &amp; vehicle controls</span><span class="chip">Placement &amp; building systems</span><span class="chip">Unit commands</span><span class="chip">UI, SFX &amp; VFX integration</span>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-key">Tools &amp; Practices</div>
+        <div class="spec-val"><span class="chip">Git</span><span class="chip">Perforce</span><span class="chip">DOTween</span><span class="chip">TexturePacker</span><span class="chip">ECS / DOTS</span><span class="chip">MVP architecture</span><span class="chip">Unity Profiler</span><span class="chip">Android development experience</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK WITH ME -->
+  <section id="work">
+    <div class="divider reveal"><span class="tick"></span><span class="rule"></span><h2 class="label">Sec. 04 — Work with me</h2><span class="rule"></span><span class="tick"></span></div>
+    <div class="workgrid reveal">
+      <div class="work-cell">
+        <h3 class="work-key">What I take on</h3>
+        <p>Combat and AI, progression systems, player and vehicle controls (2D/3D), RTS-style unit commands, placement and building systems, gameplay UI frameworks and gameplay tools, and UI/SFX/VFX integration, in Unity (C#) and Unreal 4/5 (Blueprints).</p>
+      </div>
+      <div class="work-cell">
+        <h3 class="work-key">Who it suits</h3>
+        <p>Indie and mid-size studios with a game in production or already live, who need someone embedded in the team.</p>
+      </div>
+      <div class="work-cell">
+        <h3 class="work-key">Engagement</h3>
+        <p>Hourly, working inside your team and its process, usually for 3 months or more. Rates on request.</p>
+      </div>
+      <div class="work-cell">
+        <h3 class="work-key">How to start</h3>
+        <p><a href="mailto:charonitakis.giorgos@gmail.com">Email me</a> the engine, the team size and the gameplay problem. I'll tell you honestly whether I'm the right fit.</p>
+      </div>
+    </div>
+    <div class="work-cta reveal">
+      <a class="btn btn--primary" href="mailto:charonitakis.giorgos@gmail.com">Email me</a>
+    </div>
+  </section>
+
+</main>
+  <footer id="contact" class="reveal">
+    <div class="foot-row">
+      <span>Georgios Charonitakis — Senior Gameplay Developer</span>
+      <span>Remote · European time zone</span>
+    </div>
+    <div class="foot-row foot-links">
+      <span><a href="mailto:charonitakis.giorgos@gmail.com">charonitakis.giorgos@gmail.com</a></span>
+      <span><a href="https://www.linkedin.com/in/georgios-charonitakis-a08059303" target="_blank" rel="noopener">LinkedIn</a></span>
+      <span><a href="https://github.com/GCharonitakis" target="_blank" rel="noopener">GitHub</a></span>
+      <span><a href="https://www.upwork.com/freelancers/~01bbd0fe09ebf28932" target="_blank" rel="noopener">Upwork</a></span>
+    </div>
+    <div class="foot-brand">
+      <img src="guacasoft-logo.png" alt="Guacasoft logo" width="25" height="28">
+      <div class="foot-brand-text">
+        <span>Contract work via Guacasoft Ltd</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span>Guacasoft Ltd, Varna, Bulgaria</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  document.querySelectorAll('.reveal, .frame').forEach(el=>io.observe(el));
+
+  // Trailer facades: load the (privacy-enhanced) player only when asked for.
+  document.querySelectorAll('.yt-facade').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.id + '?autoplay=1';
+      f.title = btn.dataset.title;
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      btn.replaceWith(f);
+      f.focus();
+    });
+  });
+</script>
+
+</body>
+</html>
