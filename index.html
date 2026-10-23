@@ -20,7 +20,13 @@
     "https://github.com/GCharonitakis",
     "https://www.upwork.com/freelancers/~01bbd0fe09ebf28932"
   ],
-  "worksFor": { "@type": "Organization", "name": "Guacasoft Ltd" },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Guacasoft Ltd",
+    "url": "https://gcharonitakis.github.io/",
+    "logo": "https://gcharonitakis.github.io/guacasoft-logo.png",
+    "sameAs": ["https://www.linkedin.com/company/guacasoft/"]
+  },
   "knowsAbout": ["Unity", "Unreal Engine", "Gameplay programming"]
 }
 </script>
@@ -308,6 +314,7 @@
   .foot-brand{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; margin-top:22px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; font-size:12px; color:var(--ink-faint); }
   .foot-brand img{ display:block; height:28px; width:auto; }
   .foot-brand-text{ display:flex; flex-wrap:wrap; gap:4px 10px; }
+  .foot-brand-text a{ color:inherit; }
   /* narrow screens: the two parts stack, no dangling separator */
   @media (max-width:640px){ .foot-brand-text{ flex-direction:column; } .foot-brand-text .sep{ display:none; } }
 
@@ -630,7 +637,7 @@
     <div class="foot-brand">
       <img src="guacasoft-logo.png" alt="Guacasoft logo" width="25" height="28">
       <div class="foot-brand-text">
-        <span>Contract work via Guacasoft Ltd</span>
+        <span>Contract work via <a href="https://www.linkedin.com/company/guacasoft/" target="_blank" rel="noopener">Guacasoft Ltd</a></span>
         <span class="sep" aria-hidden="true">·</span>
         <span>Guacasoft Ltd, Varna, Bulgaria</span>
       </div>
