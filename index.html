@@ -49,6 +49,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://shared.akamai.steamstatic.com">
+<link rel="preconnect" href="https://is1-ssl.mzstatic.com">
 <!-- fonts load without blocking first paint; the metric-matched fallbacks below keep the swap from shifting the layout -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
@@ -164,9 +165,9 @@
   .tile::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(5,12,31,0.94) 0%, rgba(5,12,31,0.88) 34%, rgba(5,12,31,0.45) 62%, rgba(5,12,31,0) 88%); }
   .tile:hover{ text-decoration:none; }
   .tile:hover img{ filter:brightness(1.2) saturate(1.1); transform:scale(1.04); }
-  /* Expansion Beyond's trailer has cinematic bars baked in (~2.17:1 picture); zoom past them */
-  .tile--letterboxed img{ transform:scale(1.24); }
-  .tile--letterboxed:hover img{ transform:scale(1.28); }
+  /* App Store screenshot with a caption banner along the bottom; zoom from the top edge to push it out */
+  .tile--banner img{ transform-origin:top; transform:scale(1.2); }
+  .tile--banner:hover img{ transform:scale(1.24); }
   .tile-cap{ position:absolute; z-index:2; left:24px; right:18px; bottom:12px; font-family:'IBM Plex Mono', 'Plex Mono Fallback', monospace; line-height:1.35; }
   .tile-cap b{ display:block; font-size:11.5px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink); }
   .tile-cap span{ font-size:11px; color:var(--ink-soft); }
@@ -327,7 +328,7 @@
     .corner{ opacity:1; transition:none; }
     .tile img, .yt-facade img, .yt-play{ transition:none; }
     .tile:hover img{ transform:none; }
-    .tile--letterboxed img, .tile--letterboxed:hover img{ transform:scale(1.24); }
+    .tile--banner img, .tile--banner:hover img{ transform:scale(1.2); }
     .sheet{ transition:none; }
     .sheet:hover{ transform:none; }
     html{ scroll-behavior:auto; }
@@ -368,8 +369,8 @@
         <span><a href="Georgios_Charonitakis_Resume.pdf" target="_blank" rel="noopener">Download résumé (PDF) ↗</a></span>
       </div>
       <nav class="gamestrip" aria-label="Trailers">
-        <a class="tile tile--letterboxed" href="#expansion-beyond">
-          <img src="https://i.ytimg.com/vi/U0Aj2vPXBTs/hq3.jpg" srcset="https://i.ytimg.com/vi/U0Aj2vPXBTs/hq3.jpg 480w, https://i.ytimg.com/vi/U0Aj2vPXBTs/sd3.jpg 640w, https://i.ytimg.com/vi/U0Aj2vPXBTs/maxres3.jpg 1280w" sizes="(max-width:640px) calc(50vw - 25px), 230px" alt="Expansion Beyond gameplay: a giant pink boss creature in a root-filled cavern" width="480" height="270" loading="eager" decoding="async">
+        <a class="tile tile--banner" href="#expansion-beyond">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/16/d4/b716d424-35e1-d547-2816-dff7be75a9c7/6.5_-_Benefit_07.png/640x0w.jpg" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/16/d4/b716d424-35e1-d547-2816-dff7be75a9c7/6.5_-_Benefit_07.png/640x0w.jpg 640w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/16/d4/b716d424-35e1-d547-2816-dff7be75a9c7/6.5_-_Benefit_07.png/1280x0w.jpg 1280w" sizes="(max-width:640px) calc(50vw - 25px), 230px" alt="Expansion Beyond gameplay: the astronaut meeting a pink creature in an alien forest at sunset" width="640" height="296" loading="eager" decoding="async">
           <span class="tile-cap"><b>Expansion Beyond</b><span>Unity · iOS</span></span>
         </a>
         <a class="tile" href="#mercs-inc">
